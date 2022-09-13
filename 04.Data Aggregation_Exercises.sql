@@ -10,8 +10,11 @@ group by (deposit_group)
 order by longest_magic_wand asc, deposit_group asc;
 
 #4. Smallest Deposit Group Per Magic Wand Size* ??
-select deposit_group , sum(magic_wand_size) / count(deposit_group)
-from wizzard_deposits;
+select deposit_group
+from wizzard_deposits
+group by deposit_group
+order by avg(magic_wand_size)
+limit 1;
 
 #5.	 Deposits Sum
 select deposit_group, sum(deposit_amount) as total_sum from wizzard_deposits
