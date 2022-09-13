@@ -260,130 +260,6 @@ VALUES
 (2, 3),
 (3, 1);
 
-
-# Exercise 13 Hotel Database // REMOVED
-CREATE DATABASE hotel;
-USE hotel;
-
-CREATE table `employees`(
-	`id` INT PRIMARY KEY AUTO_INCREMENT,
-    `first_name` VARCHAR(20), 
-    `last_name` VARCHAR(20), 
-    `title` VARCHAR(20), 
-    `notes` TEXT 
-);
-
-INSERT INTO `employees` (`first_name`, `last_name` )
-VALUES 
-('Test1', 'Test1'),
-('Test2', 'Test2'),
-('Test3', 'Test3');
-
-CREATE TABLE `customers` (
-	`account_number` INT PRIMARY KEY, 
-    `first_name` VARCHAR(45),
-    `last_name` VARCHAR(45),
-    `phone_number` INT,
-    `emergency_name` VARCHAR(30),
-    `emergency_number` VARCHAR(30),
-	`notes` TEXT
-);
-
-INSERT INTO `customers` (`account_number`, `first_name`, `last_name` )
-VALUES 
-(1, 'Test1', 'Test1'),
-(2, 'Test2', 'Test2'),
-(3, 'Test3', 'Test3');
-
-
-CREATE TABLE `room_status` (
-	`room_status` VARCHAR(20), 
-    `notes` TEXT
-);
-
-INSERT INTO `room_status` 
-VALUES 
-('Test1', 'Test1'),
-('Test2', 'Test2'),
-('Test3', 'Test3');
-
-CREATE TABLE `room_types` (
-	`room_type` VARCHAR(20), 
-    `notes` TEXT
-);
-
-INSERT INTO `room_types` 
-VALUES 
-('Test1', 'Test1'),
-('Test2', 'Test2'),
-('Test3', 'Test3');
-
-CREATE TABLE `bed_types` (
-	`bed_type` VARCHAR(20), 
-    `notes` TEXT
-);
-
-INSERT INTO `bed_types` 
-VALUES 
-('Test1', 'Test1'),
-('Test2', 'Test2'),
-('Test3', 'Test3');
-
-CREATE TABLE `rooms` (
-	`room_number` INT, 
-	`room_type` INT, 
-	`bed_type` INT, 
-	`rate` DOUBLE, 
-    `room_status` INT,
-    `notes` TEXT
-);
-
-INSERT INTO `rooms`(`room_number`, `room_type`, `bed_type`)
-VALUES
-(1, 1, 2),
-(2, 3, 2),
-(3, 1, 3);
-
-CREATE TABLE `payments` (
-	`id` INT PRIMARY KEY AUTO_INCREMENT,
-    `employee_id` INT, 
-    `payment_date` DATE, 
-    `account_number` INT,
-    `first_date_occupied` DATE,
-    `last_date_occupied` DATE,
-    `total_days` INT,
-    `amount_charged` DOUBLE, 
-    `tax_rate` DOUBLE,
-    `tax_amount` DOUBLE,
-    `payment_total` DECIMAL,
-    `notes` TEXT
-);
-
-INSERT INTO `payments` (`employee_id`, `payment_date`)
-VALUES
-(1, DATE(NOW())),
-(2, DATE(NOW())),
-(3, DATE(NOW()));
-
-CREATE TABLE `occupancies` (
-	`id` INT PRIMARY KEY AUTO_INCREMENT, 
-    `employee_id` INT, 
-    `date_occupied` DATE, 
-    `account_number` INT,
-    `room_number` INT,
-    `rate_applied` DOUBLE,
-    `phone_charge` DOUBLE,
-    `notes` TEXT
-); 
-
-INSERT INTO `occupancies` (`employee_id`, `date_occupied`)
-VALUES
-(1, DATE(NOW())),
-(2, DATE(NOW())),
-(3, DATE(NOW()));
-
-
-
 # Exercise 13 Basic Insert
 CREATE DATABASE soft_uni;
 USE soft_uni;
@@ -470,12 +346,7 @@ SET `salary` = `salary` * 1.1;
 SELECT `salary` FROM `employees`;
 
 # Exercise 18 Delete All Records
-
-
-
-
--- WHERE TABLE_SCHEMA = database()
---     AND
+DELETE FROM occupancies;
 
 
 
