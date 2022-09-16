@@ -1,0 +1,2 @@
+# JavaDB-MySQL
+solved problems
